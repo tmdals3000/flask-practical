@@ -1,0 +1,13 @@
+<h1>취미</h1>
+
+<ul>
+{% for hobby in hobbies %}
+    <li>{{ hobby }}</li>
+{% endfor %}
+</ul>
+
+<nav>
+    <a href="/">홈</a> |
+    <a href="/profile">취미 소개</a> |
+    <a href="/greet/친구">인사 받기</a>
+</nav>
