@@ -6,15 +6,14 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     # TODO: 본인 이름과 학번으로 바꾸세요
-    name = "홍길동"
-    student_id = "20xx000000"
+    name = "이승민"
+    student_id = "24013735"
     return render_template("home.html", name=name, student_id=student_id)
 
 
 @app.route("/profile")
 def profile():
-    # TODO: 본인 취미 3가지로 바꾸세요
-    hobbies = ["취미 1", "취미 2", "취미 3"]
+    hobbies = ["연극보기", "게임하기", "유튜브 보기"]
     return render_template("profile.html", hobbies=hobbies)
 
 
