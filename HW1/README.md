@@ -17,8 +17,6 @@ flask run
 
 ## 실행 화면
 
-<!-- TODO: 아래 세 자리에 각 페이지 실행 캡처를 끌어다 놓으세요 (GitHub 웹 편집 화면에서 가능) -->
-
-1. `/` 실행 화면 —
-2. `/profile` 실행 화면 —
-3. `/greet/<name>` 실행 화면 —
+| 초기화면 | 취미화면 | 이름화면 |
+|:---:|:---:|:---:|
+| <img width="250" alt="초기화면" src="images/home.png"> | <img width="250" alt="취미화면" src="images/profile.png"> | <img width="250" alt="이름화면" src="images/greet.png"> |
