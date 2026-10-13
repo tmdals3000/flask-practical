@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(100), nullable=False)
-    # TODO(1): 설명 칸 note 를 더하세요 — db.Column(db.String(200)) (L6 47쪽)
+    note = db.Column(db.String(200))
     done = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
@@ -24,8 +24,9 @@ class Todo(db.Model):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        # TODO(2): note 도 같이 받아 넣으세요 — Todo(text=..., note=request.form['note'])
-        db.session.add(Todo(text=request.form['todo']))
+        todo = Todo(text=request.form['todo'],
+                    note=request.form['note'])
+        db.session.add(todo)
         db.session.commit()
         return redirect(url_for('index'))
 
