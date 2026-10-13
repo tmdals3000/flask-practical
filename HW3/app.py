@@ -50,10 +50,15 @@ def delete(id):
     return redirect(url_for('index'))
 
 
-# TODO(3): /edit/<int:id> 라우트를 GET 과 POST 둘 다 받게 만드세요 (L6 48쪽)
-#   - todo = db.get_or_404(Todo, id)
-#   - POST 면 text 와 note 를 고치고 commit 한 뒤 목록으로 redirect
-#   - 아니면 render_template('edit.html', todo=todo)
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    todo = db.get_or_404(Todo, id)
+    if request.method == 'POST':
+        todo.text = request.form['todo']
+        todo.note = request.form['note']
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('edit.html', todo=todo)
 
 
 @app.route('/search')
