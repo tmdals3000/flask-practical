@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}할 일 수정{% endblock %}
+
+{% block content %}
+<h2>할 일 수정</h2>
+{# TODO(6): 수정 폼을 만드세요 (L6 48~49쪽)
+   - method="post"
+   - 할 일 입력칸 name="todo" 와 설명 입력칸 name="note" 에 지금 값이 들어 있게:
+     value="{{ todo.text }}" / value="{{ todo.note }}"
+   - [저장] 버튼 #}
+<a href="{{ url_for('index') }}">목록으로</a>
+{% endblock %}
