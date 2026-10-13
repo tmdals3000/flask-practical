@@ -6,7 +6,7 @@
 <h2>Add New Todo</h2>
 <form method="post">
     <input type="text" name="todo" placeholder="할 일" required>
-    {# TODO(4): 설명 입력칸을 더하세요 — name="note" placeholder="설명" #}
+    <input type="text" name="note" placeholder="설명">
     <button type="submit">Add Todo</button>
 </form>
 
@@ -21,7 +21,8 @@
         {% else %}
         {{ todo.text }}
         {% endif %}
-        {# TODO(5): 설명 todo.note 를 보여 주는 <span class="note"> 와 [수정] 링크 url_for('edit', id=todo.id) 를 더하세요 #}
+        <span class="note">{{ todo.note or '' }}</span>
+        <a href="{{ url_for('edit', id=todo.id) }}">수정</a>
         <a href="{{ url_for('delete', id=todo.id) }}">Delete</a>
     </li>
     {% endfor %}
